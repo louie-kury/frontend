@@ -1,5 +1,6 @@
 const config = {
   extends: ['@commitlint/config-conventional'],
+  defaultIgnores: false,
   plugins: [
     {
       rules: {
@@ -19,6 +20,7 @@ const config = {
     },
   ],
   rules: {
+    'type-enum': [2, 'always', ['feat', 'fix', 'refactor', 'docs', 'test', 'chore']],
     'scope-empty': [2, 'always'],
     'subject-case': [0],
     'header-format': [2, 'always'],
