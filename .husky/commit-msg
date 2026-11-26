@@ -1,0 +1,6 @@
+message=$(head -n 1 "$1") || exit 1
+
+if ! printf '%s\n' "$message" | grep -Eq '^(feat|fix|refactor|docs|test|chore): [^[:space:]]'; then
+  printf '%s\n' '커밋 제목을 "타입: 변경 내용" 형식으로 작성해 주세요. 예: fix: 로그인 오류 수정' >&2
+  exit 1
+fi
